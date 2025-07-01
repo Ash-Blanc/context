@@ -4,8 +4,8 @@
   "main": "./dist-electron/main.js",
   "scripts": {
     "clean": "rimraf dist dist-electron",
-    "dev": "vite --port 5173",
-    "build": "npm run clean && tsc && vite build",
+    "dev": "node init && vite --port 5173",
+    "build": "node init && npm run clean && tsc && vite build",
     "preview": "vite preview",
     "electron:dev": "tsc -p electron/tsconfig.json && cross-env NODE_ENV=development electron .",
     "app:dev": "concurrently \"vite --port 5173\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .\"",
